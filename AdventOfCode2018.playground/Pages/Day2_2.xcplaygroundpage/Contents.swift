@@ -110,5 +110,8 @@ if testRes && differingTestRes && almostEqualRes && equalCharRes {
     print("Tests didn't pass")
 }
 
+/*:
+ My result of Day 2 Part 2 is: `prtkqyluiusocwvaezjmhmfgx`
 
-//: [Next](@next)
+ [Day 3 Part 1](Day3_1)
+ */
