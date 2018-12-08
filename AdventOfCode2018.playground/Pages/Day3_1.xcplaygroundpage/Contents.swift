@@ -47,6 +47,15 @@
 
 import Foundation
 
+extension Int {
+    init?(withRegex regex:String, from: String) {
+        guard let range = from.range(of: regex, options: .regularExpression) else {
+            return nil
+        }
+        self.init(String(from[range]))
+    }
+}
+
 struct Rect: Equatable {
 
     let width: Int
@@ -59,14 +68,10 @@ struct Rect: Equatable {
         let yRegEx = "(?<=,)[0-9]+(?=:)"
         let widthRegEx = "(?<=: )[0-9]+(?=x)"
         let heightRegEx = "(?<=x)[0-9]+"
-        if let xRange = string.range(of: xRegEx, options: .regularExpression),
-            let x = Int(string[xRange]),
-            let yRange = string.range(of: yRegEx, options: .regularExpression),
-            let y = Int(string[yRange]),
-            let widthRange = string.range(of: widthRegEx, options: .regularExpression),
-            let width = Int(string[widthRange]),
-            let heightRange = string.range(of: heightRegEx, options: .regularExpression),
-            let height = Int(string[heightRange]) {
+        if let x = Int(withRegex: xRegEx, from: string),
+            let y = Int(withRegex: yRegEx, from: string),
+            let width = Int(withRegex: widthRegEx, from: string),
+            let height = Int(withRegex: heightRegEx, from: string) {
             self.init(width: width, height: height, x: x, y: y)
         } else {
             return nil
