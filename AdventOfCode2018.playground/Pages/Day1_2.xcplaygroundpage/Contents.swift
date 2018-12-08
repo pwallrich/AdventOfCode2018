@@ -1,5 +1,6 @@
 //: [Home](Main)
 /*:
+ ## Day 1 Part 2
  You notice that the device repeats the same frequency change list over and over. To calibrate the device, you need to find the first frequency it reaches twice.
 
  For example, using the same list of changes above, the device would loop as follows:

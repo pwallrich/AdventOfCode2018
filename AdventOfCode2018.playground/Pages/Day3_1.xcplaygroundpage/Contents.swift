@@ -1,6 +1,7 @@
 //: [Home](Main)
 
 /*:
+ ## Day 3 Part 1
  The whole piece of fabric they're working on is a very large square - at least `1000` inches on each side.
 
  Each Elf has made a claim about which area of fabric would be ideal for Santa's suit. All claims have an ID and consist of a single rectangle with edges parallel to the edges of the fabric. Each claim's rectangle is defined as follows:
