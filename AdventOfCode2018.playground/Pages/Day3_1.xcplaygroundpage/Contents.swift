@@ -128,7 +128,7 @@ if testRes && rectRes {
 }
 
 /*:
- My result of Day 3 Part ^ is: `108961`
+ My result of Day 3 Part 1 is: `108961`
 
  [Day 3 Part 1](Day3_1)
  */
