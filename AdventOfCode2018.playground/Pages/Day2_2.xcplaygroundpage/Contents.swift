@@ -68,6 +68,25 @@ let almostEqualRes = almostEqualTestData.enumerated().reduce(true, { res, val in
 })
 
 print("Day2_2 All AlmostEqualTests: \(almostEqualRes)")
+
+//: Testing equalChars
+
+let equalTestData = [
+    (values: ("abcde","abcde"), res: "abcde"),
+    (values:("abcde", "abcdf"), res: "abcd"),
+    (values:("abcde", "abcfg"), res: "abc")
+]
+
+let equalCharRes = equalTestData.enumerated().reduce(true, { res, val in
+    let (idx, testData) = val
+    let testRes = testData.values.0.getEqualElements(with: testData.values.1) == testData.res
+    print("Day2_2 Equal Tests \(idx): \(testRes)")
+    return res && testRes
+})
+
+print("Day2_2 All Equal: \(equalCharRes)")
+
+
 //: Testing StringsDifferingByOne
 
 let testStrings = ["abcde", "fghij", "klmno", "pqrst", "fguij", "axcye", "wvxyz"]
@@ -84,7 +103,7 @@ print("Day2_2 Test: \(testRes)")
 
 //: Getting the result if the tests are working
 
-if testRes && differingTestRes && almostEqualRes {
+if testRes && differingTestRes && almostEqualRes && equalCharRes {
     let inputData = Helper.getInput(name: "Input", fileType: "txt")!
     print("Day2_2 Result: \(day2_2(with: inputData))")
 } else {
