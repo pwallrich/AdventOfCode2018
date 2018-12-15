@@ -121,7 +121,7 @@ let inputData = Helper.getInput(name: "Input", fileType: "txt")!
 //: #### Getting the result if the tests are working
 
 if testRes && rectRes {
-    print("Day3_1 Result: \(day3_1(with: inputData))")
+    print("Day3_1 Result: \(day3_1(with: inputData) ?? -1)")
 } else {
     print("Tests didn't pass")
 }
